@@ -46,8 +46,21 @@ class EchoFileCreator(FlowLauncher):
         return [{
             "Title": f"File to be created: {filename}.{extension}",
             "SubTitle": subtitle,
-            "IcoPath": "Images/icon.png"
+            "IcoPath": "Images/icon.png",
+            "JsonRPCAction": {
+                "method": "create_file",
+                "parameters": [extension, filename, location],
+                "dontHideAfterAction": False
+            }
         }]
+
+    def create_file(self, extension, filename, location):
+            full_path = os.path.join(location, f"{filename}.{extension}")
+            # Create the dir if it doesn't exists
+            os.makedirs(os.path.dirname(full_path), exist_ok=True)
+            # Create the file
+            with open(full_path, 'w') as f:
+                f.write('')
 
 if __name__ == "__main__":
     EchoFileCreator()
