@@ -1,0 +1,12 @@
+{
+  "ID": "12345678-1234-1234-1234-123456789abc",
+  "ActionKeywords": ["echo", "mkdir"],
+  "Name": "File Creator",
+  "Description": "File creation tool for various formats",
+  "Author": "Milkwased",
+  "Version": "1.0.1",
+  "Language": "python",
+  "IcoPath": "Images\\app.png",
+  "Website": "https://github.com/you/echo-plugin",
+  "ExecuteFileName": "main.py"
+}
